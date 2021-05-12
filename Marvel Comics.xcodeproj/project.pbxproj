@@ -58,15 +58,55 @@
 		0B12CC58264C84B00028BA72 /* Marvel Comics */ = {
 			isa = PBXGroup;
 			children = (
+				0B12CC72264C880D0028BA72 /* Model */,
+				0B12CC73264C88150028BA72 /* View */,
+				0B12CC74264C881C0028BA72 /* Controller */,
+				0B12CC75264C88280028BA72 /* API */,
+				0B12CC76264C882C0028BA72 /* Utilities */,
 				0B12CC59264C84B00028BA72 /* AppDelegate.swift */,
 				0B12CC5B264C84B00028BA72 /* SceneDelegate.swift */,
-				0B12CC5D264C84B00028BA72 /* ViewController.swift */,
 				0B12CC5F264C84B00028BA72 /* Main.storyboard */,
 				0B12CC62264C84B10028BA72 /* Assets.xcassets */,
 				0B12CC64264C84B10028BA72 /* LaunchScreen.storyboard */,
 				0B12CC67264C84B10028BA72 /* Info.plist */,
 			);
 			path = "Marvel Comics";
+			sourceTree = "<group>";
+		};
+		0B12CC72264C880D0028BA72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0B12CC73264C88150028BA72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B12CC5D264C84B00028BA72 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B12CC74264C881C0028BA72 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0B12CC75264C88280028BA72 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0B12CC76264C882C0028BA72 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
