@@ -25,8 +25,11 @@ class Service {
                           "apikey": publicKey]
         
         let request = AF.request(baseURL, parameters: parameters)
-        request.responseJSON { (data) in
-            print(data)
+        request.responseJSON { (data) in print(data)
+            
+            let characters = try! JSONDecoder().decode(Characters.self, from: data.data!)
+            print(characters)
+
         }
         
     }
@@ -39,4 +42,3 @@ class Service {
     }
     
 }
-
