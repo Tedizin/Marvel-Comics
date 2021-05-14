@@ -69,9 +69,7 @@
 				0B12CC76264C882C0028BA72 /* Utilities */,
 				0B12CC59264C84B00028BA72 /* AppDelegate.swift */,
 				0B12CC5B264C84B00028BA72 /* SceneDelegate.swift */,
-				0B12CC5F264C84B00028BA72 /* Main.storyboard */,
 				0B12CC62264C84B10028BA72 /* Assets.xcassets */,
-				0B12CC64264C84B10028BA72 /* LaunchScreen.storyboard */,
 				0B12CC67264C84B10028BA72 /* Info.plist */,
 			);
 			path = "Marvel Comics";
@@ -88,6 +86,8 @@
 		0B12CC73264C88150028BA72 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0B12CC5F264C84B00028BA72 /* Main.storyboard */,
+				0B12CC64264C84B10028BA72 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
