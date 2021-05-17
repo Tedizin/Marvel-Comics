@@ -14,8 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestAPI.requestURL()
-        
+        buscaCharacters(texto: "Thor")
     }
     
 }
@@ -33,6 +32,13 @@ extension Characters {
     var item1: (label: String, value: String) {
         ("Description: ", description)
       }
-    
 }
 
+extension ViewController {
+    
+    func buscaCharacters(texto: String){
+        Service.shared.searchCharacter(text: texto) { (data) in
+            print(data!)
+        }
+    }
+}

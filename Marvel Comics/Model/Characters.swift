@@ -7,6 +7,33 @@
 
 import UIKit
 
+struct ReturnAPI: Codable {
+    let code : Int
+    let data: DataClass
+    let etag: String
+}
+
+struct DataClass: Codable {
+    let offset, limit, total, count: Int
+    let results: [Result]
+}
+
+struct Result: Codable {
+   let id: Int
+   let name: String
+   let resourceURI: String
+   let description: String
+   let thumbnail: Thumbnail
+   
+   enum CodingKeys: String, CodingKey{
+       case id
+       case name
+       case resourceURI
+       case thumbnail
+       case description
+   }
+}
+
 struct Characters: Decodable {
     
     var id: Int!
