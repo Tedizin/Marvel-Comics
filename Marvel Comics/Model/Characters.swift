@@ -19,19 +19,19 @@ struct DataClass: Codable {
 }
 
 struct Result: Codable {
-   let id: Int
-   let name: String
-   let resourceURI: String
-   let description: String
-   let thumbnail: Thumbnail
-   
-   enum CodingKeys: String, CodingKey{
-       case id
-       case name
-       case resourceURI
-       case thumbnail
-       case description
-   }
+    let id: Int
+    let name: String
+    let description: String
+    let resourceURI: String
+    let thumbnail: Thumbnail
+    
+    enum CodingKeys: String, CodingKey{
+        case id
+        case name
+        case resourceURI
+        case thumbnail
+        case description
+    }
 }
 
 struct Thumbnail: Codable {
