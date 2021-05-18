@@ -1,7 +1,6 @@
 //
 //  TableViewController.swift
 //  Marvel Comics
-//
 //  Created by user194398 on 17/05/21.
 //
 
