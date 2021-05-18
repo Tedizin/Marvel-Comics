@@ -27,7 +27,7 @@ class Service {
     
     static let shared = Service()
     
-    func searchCharacter(text: String, completion: @escaping (ReturnAPI?) -> ()){
+    func requestCharacter(text: String, completion: @escaping (ReturnAPI?) -> ()){
         
         let path = "/v1/public/characters"
         
@@ -62,7 +62,6 @@ class Service {
                 return
             }
         }
-        
         .resume()
     }
     

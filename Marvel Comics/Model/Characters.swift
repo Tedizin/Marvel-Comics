@@ -8,7 +8,7 @@
 import UIKit
 
 struct ReturnAPI: Codable {
-    let code : Int
+    let code: Int
     let data: DataClass
     let etag: String
 }
@@ -32,22 +32,6 @@ struct Result: Codable {
        case thumbnail
        case description
    }
-}
-
-struct Characters: Decodable {
-    
-    var id: Int!
-    var name: String!
-    var description: String!
-    var thumbnail: Thumbnail
-    var url: [CharacterURL]
-    
-//    init(id: Int, name: String, description: String) {
-//        self.id = id
-//        self.name = name
-//        self.description = description
-//    }
-    
 }
 
 struct Thumbnail: Codable {

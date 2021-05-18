@@ -14,12 +14,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buscaCharacters(texto: "Thor")
+        searchCharacters(texto: "Thor")
     }
     
 }
 
-extension Characters {
+extension Result {
     
     var titleLabelText: String {
         name
@@ -36,8 +36,8 @@ extension Characters {
 
 extension ViewController {
     
-    func buscaCharacters(texto: String){
-        Service.shared.searchCharacter(text: texto) { (data) in
+    func searchCharacters(texto: String){
+        Service.shared.requestCharacter(text: texto) { (data) in
             print(data!)
         }
     }
