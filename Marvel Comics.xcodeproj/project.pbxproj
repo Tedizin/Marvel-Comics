@@ -14,6 +14,7 @@
 		0B12CC63264C84B10028BA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B12CC62264C84B10028BA72 /* Assets.xcassets */; };
 		0B12CC66264C84B10028BA72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B12CC64264C84B10028BA72 /* LaunchScreen.storyboard */; };
 		0B12CC70264C85DF0028BA72 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B12CC6F264C85DF0028BA72 /* Alamofire */; };
+		910ECC642653474E0077D55E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910ECC632653474E0077D55E /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		0B12CC62264C84B10028BA72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B12CC65264C84B10028BA72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B12CC67264C84B10028BA72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		910ECC632653474E0077D55E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,7 @@
 		0B12CC58264C84B00028BA72 /* Marvel Comics */ = {
 			isa = PBXGroup;
 			children = (
-				0B12CC72264C880D0028BA72 /* Model */,
 				0B12CC73264C88150028BA72 /* View */,
-				0B12CC74264C881C0028BA72 /* Controller */,
-				0B12CC75264C88280028BA72 /* API */,
-				0B12CC76264C882C0028BA72 /* Utilities */,
 				0B12CC59264C84B00028BA72 /* AppDelegate.swift */,
 				0B12CC5B264C84B00028BA72 /* SceneDelegate.swift */,
 				0B12CC5F264C84B00028BA72 /* Main.storyboard */,
@@ -73,40 +71,13 @@
 			path = "Marvel Comics";
 			sourceTree = "<group>";
 		};
-		0B12CC72264C880D0028BA72 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		0B12CC73264C88150028BA72 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0B12CC5D264C84B00028BA72 /* ViewController.swift */,
+				910ECC632653474E0077D55E /* TableViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		0B12CC74264C881C0028BA72 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		0B12CC75264C88280028BA72 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		0B12CC76264C882C0028BA72 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +159,7 @@
 				0B12CC5E264C84B00028BA72 /* ViewController.swift in Sources */,
 				0B12CC5A264C84B00028BA72 /* AppDelegate.swift in Sources */,
 				0B12CC5C264C84B00028BA72 /* SceneDelegate.swift in Sources */,
+				910ECC642653474E0077D55E /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
