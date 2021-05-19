@@ -27,7 +27,7 @@ class Service {
     
     static let shared = Service()
     
-    func requestCharacter(text: String, completion: @escaping (ReturnAPI?) -> ()){
+    func requestCharacter(text: String, completion: @escaping (RequestAPI?) -> ()){
         
         let path = "/v1/public/characters"
         
@@ -54,7 +54,7 @@ class Service {
             
             do {
                 guard let data = data else {return}
-                let characters = try JSONDecoder().decode(ReturnAPI.self, from: data)
+                let characters = try JSONDecoder().decode(RequestAPI.self, from: data)
                 completion(characters)
                 
             } catch let err {
