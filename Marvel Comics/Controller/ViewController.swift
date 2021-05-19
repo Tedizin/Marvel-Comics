@@ -11,27 +11,13 @@ import Alamofire
 class ViewController: UIViewController {
 
     var requestAPI = Service()
+    var arrayCharacters: [Characters] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchCharacters(texto: "Hulk")
     }
     
-}
-
-extension Characters {
-    
-    var titleLabelText: String {
-        name
-      }
-    
-    var subtitleLabelText: String {
-        "\(String(id))"
-      }
-    
-    var item1: (label: String, value: String) {
-        ("Description: ", description)
-      }
 }
 
 extension ViewController {
@@ -43,13 +29,32 @@ extension ViewController {
     }
 }
 
-//extension ViewController: UITableViewDataSource {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//}
+extension ViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayCharacters.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
+        
+        cell.textLabel?.text = arrayCharacters[indexPath.row].name.description
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let alertController = UIAlertController(title: "Description", message: arrayCharacters[indexPath.row].description , preferredStyle: .alert)
+        
+        let actionConfirm = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alertController.addAction(actionConfirm)
+        
+        present(alertController, animated: true, completion: nil)
+        
+    }
+
+}
