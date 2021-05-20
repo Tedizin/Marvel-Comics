@@ -13,7 +13,11 @@
 		0B12CC61264C84B00028BA72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B12CC5F264C84B00028BA72 /* Main.storyboard */; };
 		0B12CC63264C84B10028BA72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B12CC62264C84B10028BA72 /* Assets.xcassets */; };
 		0B12CC66264C84B10028BA72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B12CC64264C84B10028BA72 /* LaunchScreen.storyboard */; };
-		0B12CC70264C85DF0028BA72 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0B12CC6F264C85DF0028BA72 /* SwiftPackageProductDependency */; };
+		0B12CC70264C85DF0028BA72 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B12CC6F264C85DF0028BA72 /* Alamofire */; };
+		90384FCE2655C27000199B77 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90384FCD2655C27000199B77 /* Credentials.swift */; };
+		90384FD12655DA3600199B77 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90384FD02655DA3600199B77 /* APIService.swift */; };
+		90384FDE2655EAE900199B77 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 90384FDD2655EAE900199B77 /* Kingfisher */; };
+		906069A2265691580060AC07 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906069A1265691580060AC07 /* Characters.swift */; };
 		91DF3FAD14D6FB2ACE2EF5B6 /* Pods_Marvel_Comics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6431E952AA695E18F229370 /* Pods_Marvel_Comics.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,9 @@
 		0B12CC65264C84B10028BA72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B12CC67264C84B10028BA72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40A86F04EC27D32A7EB227FB /* Pods-Marvel Comics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel Comics.release.xcconfig"; path = "Target Support Files/Pods-Marvel Comics/Pods-Marvel Comics.release.xcconfig"; sourceTree = "<group>"; };
+		90384FCD2655C27000199B77 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Credentials.swift; path = "Marvel Comics/Model/Credentials.swift"; sourceTree = SOURCE_ROOT; };
+		90384FD02655DA3600199B77 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		906069A1265691580060AC07 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		C6431E952AA695E18F229370 /* Pods_Marvel_Comics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_Comics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74360262A5BA5C1CA6C04AA /* Pods-Marvel Comics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel Comics.debug.xcconfig"; path = "Target Support Files/Pods-Marvel Comics/Pods-Marvel Comics.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -36,7 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B12CC70264C85DF0028BA72 /* BuildFile in Frameworks */,
+				90384FDE2655EAE900199B77 /* Kingfisher in Frameworks */,
+				0B12CC70264C85DF0028BA72 /* Alamofire in Frameworks */,
 				91DF3FAD14D6FB2ACE2EF5B6 /* Pods_Marvel_Comics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +91,8 @@
 		0B12CC72264C880D0028BA72 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				90384FCD2655C27000199B77 /* Credentials.swift */,
+				906069A1265691580060AC07 /* Characters.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,6 +115,7 @@
 		0B12CC75264C88280028BA72 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				90384FD02655DA3600199B77 /* APIService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -122,7 +133,6 @@
 				C74360262A5BA5C1CA6C04AA /* Pods-Marvel Comics.debug.xcconfig */,
 				40A86F04EC27D32A7EB227FB /* Pods-Marvel Comics.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,7 +163,8 @@
 			);
 			name = "Marvel Comics";
 			packageProductDependencies = (
-				0B12CC6F264C85DF0028BA72 /* SwiftPackageProductDependency */,
+				0B12CC6F264C85DF0028BA72 /* Alamofire */,
+				90384FDD2655EAE900199B77 /* Kingfisher */,
 			);
 			productName = "Marvel Comics";
 			productReference = 0B12CC56264C84B00028BA72 /* Marvel Comics.app */;
@@ -183,7 +194,8 @@
 			);
 			mainGroup = 0B12CC4D264C84B00028BA72;
 			packageReferences = (
-				0B12CC6E264C85DE0028BA72 /* RemoteSwiftPackageReference */,
+				0B12CC6E264C85DE0028BA72 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				90384FDC2655EAE900199B77 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 0B12CC57264C84B00028BA72 /* Products */;
 			projectDirPath = "";
@@ -255,7 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B12CC5E264C84B00028BA72 /* ViewController.swift in Sources */,
+				906069A2265691580060AC07 /* Characters.swift in Sources */,
+				90384FD12655DA3600199B77 /* APIService.swift in Sources */,
 				0B12CC5A264C84B00028BA72 /* AppDelegate.swift in Sources */,
+				90384FCE2655C27000199B77 /* Credentials.swift in Sources */,
 				0B12CC5C264C84B00028BA72 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,7 +477,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0B12CC6E264C85DE0028BA72 /* RemoteSwiftPackageReference */ = {
+		0B12CC6E264C85DE0028BA72 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -470,13 +485,26 @@
 				minimumVersion = 5.4.3;
 			};
 		};
+		90384FDC2655EAE900199B77 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B12CC6F264C85DF0028BA72 /* SwiftPackageProductDependency */ = {
+		0B12CC6F264C85DF0028BA72 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0B12CC6E264C85DE0028BA72 /* RemoteSwiftPackageReference */;
+			package = 0B12CC6E264C85DE0028BA72 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		90384FDD2655EAE900199B77 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90384FDC2655EAE900199B77 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
