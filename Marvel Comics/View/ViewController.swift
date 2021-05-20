@@ -9,10 +9,12 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController {
-
+    
+    let mainService = ApiService()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainService.marvelApiCall()
     }
     
 }
