@@ -29,7 +29,6 @@ class Service {
                 let chars = try JSONDecoder().decode(RequestAPI.self, from: data)
                 self.characters = chars.data.results
                 if(!self.characters.isEmpty){
-                    print(self.characters)
                     closure()
                 }
             } catch {
