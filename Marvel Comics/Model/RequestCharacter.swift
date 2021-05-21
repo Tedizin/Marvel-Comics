@@ -13,8 +13,8 @@ struct RequestAPI: Decodable {
     let etag: String
 }
 
-//enum RequestAPI {
-//    
+//enum RequestCharacter {
+//    case character(Int)
 //    case characters(Int, Int)
-//    
+//
 //}
