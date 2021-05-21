@@ -9,10 +9,6 @@ import UIKit
 import Alamofire
 import CryptoKit
 
-protocol ApiResponse {
-    func success()
-}
-
 class ApiService {
    
     
