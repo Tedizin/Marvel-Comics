@@ -11,66 +11,37 @@ import CryptoKit
 
 class Service {
     
-    public static let get = HTTPMethod(rawValue: "GET")
-    
-    let baseURL = "http://gateway.marvel.com"
-    let publicKey = "53d86db4b4f54265554d105320c3d7e7"
-    let privateKey = "beb6b6c6e2b6c26563514092219d56e717655602"
-    let ts = String(Date().timeIntervalSince1970)
-    
-    public func requestAPI(name: String) {
-        
-        
-    }
+    public let publicKey = "53d86db4b4f54265554d105320c3d7e7"
+    public let privateKey = "beb6b6c6e2b6c26563514092219d56e717655602"
+    public let ts = String(Date().timeIntervalSince1970)
+    public var characters = [Result]()
     
     // MARK: - Search Request
     
-    static let shared = Service()
-    
-    func requestCharacter(text: String, completion: @escaping (RequestAPI?) -> ()){
+    func requestCharacter(using closure: @escaping (() -> Void)){
         
-        let path = "/v1/public/characters"
-        
-        guard let url = URL(string: "\(baseURL)\(path)?ts=\(ts)&apikey=\(publicKey)&hash=\(getMD5())&nameStartsWith=\(text)") else {return}
-        
-        let parameters = ["ts": ts,
-                          "hash": self.getMD5(),
-                          "apikey": publicKey]
-        
-//        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).responseDecodable(of: ReturnAPI.self) { (result) in
-//            guard let response = result.value, result.error == nil else {
-//                completion(nil)
-//                return
-//            }
-//            completion(response)
-//
-//        }
+        let baseURL = URL(string: "http://gateway.marvel.com/v1/public/characters?ts=\(ts)&apikey=\(publicKey)&hash=\(getMD5())")!
             
-        URLSession.shared.dataTask(with: url) { (data, resp, err) in
-            if err != nil {
-                completion(nil)
-                return
-            }
-            
+        AF.request(baseURL).responseJSON {
+            (responseData) in
+            guard let data = responseData.data else {return}
             do {
-                guard let data = data else {return}
-                let characters = try JSONDecoder().decode(RequestAPI.self, from: data)
-                completion(characters)
-                
-            } catch let err {
-                completion(nil)
-                return
+                let chars = try JSONDecoder().decode(RequestAPI.self, from: data)
+                self.characters = chars.data.results
+                if(!self.characters.isEmpty){
+                    print(self.characters)
+                    closure()
+                }
+            } catch {
+                print("error: \(error)")
             }
         }
-        .resume()
     }
     
     func getMD5() -> String {
-        let apiData = ts + privateKey + publicKey
-        guard let data = apiData.data(using: .utf8) else { return String() }
-        let apiHash = Insecure.MD5.hash(data: data)
+        let apiData = (ts + privateKey + publicKey).data(using: .utf8)
+        let apiHash = Insecure.MD5.hash(data: apiData!)
         return apiHash.map { String(format: "%02hhx", $0) }.joined()
-        
     }
     
 }

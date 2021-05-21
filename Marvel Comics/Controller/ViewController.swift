@@ -7,66 +7,60 @@
 
 import UIKit
 import Alamofire
+import CryptoKit
 
 class ViewController: UIViewController {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var searchLabel: UITextField!
+    @IBOutlet weak var mainTableView: UITableView!
     
     // MARK: - Variables
     
     var requestAPI = Service()
-    var arrayCharacters: [Characters] = []
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchCharacters(texto: "Hulk")
-    }
-    
-}
-
-// MARK: - Extensions
-
-extension ViewController {
-    
-    func searchCharacters(texto: String){
-        Service.shared.requestCharacter(text: texto) { (data) in
-            print(data!)
+        mainTableView.dataSource = self
+        requestAPI.requestCharacter {
+            self.mainTableView.reloadData()
         }
+        
     }
+    
 }
 
 // MARK: - Table view data source
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayCharacters.count
+        return requestAPI.characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
+        let cell = mainTableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! CharacterTableViewCell
         
-        cell.textLabel?.text = arrayCharacters[indexPath.row].name
+        cell.textLabel?.text = requestAPI.characters[indexPath.row].name
+        let url = URL(string: requestAPI.characters[indexPath.row].thumbnail.path + "/standard_fantastic.jpg")!
+        cell.thumbnailImageView.loadImage(url: url)
         
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        tableView.deselectRow(at: indexPath, animated: true)
-//
-//        let alertController = UIAlertController(title: "Description", message: arrayCharacters[indexPath.row].description , preferredStyle: .alert)
-//
-//        let actionConfirm = UIAlertAction(title: "OK", style: .default, handler: nil)
-//
-//        alertController.addAction(actionConfirm)
-//
-//        present(alertController, animated: true, completion: nil)
-//
-//    }
-    
+}
+
+extension UIImageView {
+    func loadImage(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }

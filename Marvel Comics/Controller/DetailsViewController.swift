@@ -13,13 +13,10 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var characters: Characters!
+    var characters: Result!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        nameLabel.text = characters.name
-        descriptionLabel.text = characters.description
 
     }
 

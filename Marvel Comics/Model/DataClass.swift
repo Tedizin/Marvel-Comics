@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct DataClass: Decodable {
-    let offset, limit, total, count: Int
-    let results: [Characters]
-    
-}
+//struct DataClass: Decodable {
+//    let offset, limit, total, count: Int
+//    let results: [Characters]
+//    
+//}
 
 //struct DataClass<T: Decodable>: Decodable {
 //    let items: [T]

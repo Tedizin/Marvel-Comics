@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct Thumbnail: Decodable {
-    let path: String?
-    let ext: Extension?
-
-    enum CodingKeys: String, CodingKey {
-        case path
-        case ext = "extension"
-    }
-}
-
-enum Extension: String, Decodable {
-    case gif = "gif"
-    case jpg = "jpg"
-    case png = "png"
-}
+//struct Thumbnail: Decodable {
+//    let path: String?
+//    let ext: Extension?
+//
+//    enum CodingKeys: String, CodingKey {
+//        case path
+//        case ext = "extension"
+//    }
+//}
+//
+//enum Extension: String, Decodable {
+//    case gif = "gif"
+//    case jpg = "jpg"
+//    case png = "png"
+//}

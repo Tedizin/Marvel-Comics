@@ -7,11 +7,13 @@
 
 import Foundation
 
-struct RequestAPI: Decodable {
-    let code: Int
-    let data: DataClass
-    let etag: String
-}
+//struct RequestAPI: Decodable {
+//    let code: Int
+//    let data: DataClass
+//    let etag: String
+//    let copyright, attributionText: String
+//    let attributionHTML: String
+//}
 
 //enum RequestCharacter {
 //    case character(Int)
