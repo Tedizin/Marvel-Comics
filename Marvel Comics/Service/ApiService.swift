@@ -9,23 +9,28 @@ import UIKit
 import Alamofire
 import CryptoKit
 
+protocol ApiResponse {
+    func success()
+}
+
 class ApiService {
    
     
     private let privateKey = "1be72de4faa6afbd68558025cd7b1c8a3ed9ac91"
     private let publicKey = "2a039887bd1b3d7a8fb4cfd16cfe7c71"
     private let ts = String(Date().timeIntervalSince1970)
-    //var characters: ReturnApi!
-    
-    func marvelApiCall(completion: @escaping (ReturnApi, Error) -> ()) {
-        //let parms = ["ts": ts, "hash": self.convertToMD5(), "apiKey": publicKey, "limit": "20"]
-
+    public var characters = [Result]()
+    func marvelApiCall(using closure: @escaping (() -> Void)) {
         let baseUrl = URL(string: "http://gateway.marvel.com/v1/public/characters?ts=\(ts)&apikey=\(publicKey)&hash=\(convertToMD5())")!
         AF.request(baseUrl).responseJSON {
             (responseData) in
             guard let data = responseData.data else {return}
             do {
                 let chars = try JSONDecoder().decode(ReturnApi.self, from: data)
+                self.characters = chars.data.results
+                if(!self.characters.isEmpty){
+                    closure()
+                }
             } catch {
                 print("error: \(error)")
             }
